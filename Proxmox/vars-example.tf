@@ -1,0 +1,51 @@
+# Variables file
+
+# proxmox host IP
+variable "proxmox_host" {
+  default = ""
+}
+
+# target node
+variable "target_node" {
+    default = ""
+  
+}
+
+# token ID
+variable "pm_api_token_id" {
+    default = ""
+}
+
+# token secret
+variable "pm_api_token_secret" {
+    default = ""
+}
+
+# ssh key
+variable "ssh_key" {
+  default = ""
+}
+
+# VM templates map
+variable "template_name" {
+  type = map
+  default = {
+    ""
+  }
+}
+
+# Choose VM template via user input and validate
+variable "vm_name_input" {
+  type = string
+  description = "Enter one of the following: "
+  validation {
+    condition = contains(["", ""], var.vm_name_input)
+    error_message = "The VM template name must be one of the following: "
+  }
+}
+
+# Number of VMs to create
+variable "vm_count" {
+  type = string
+  description = "Enter the number of VMs you wish to create"
+}
