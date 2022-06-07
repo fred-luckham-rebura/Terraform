@@ -33,7 +33,7 @@ resource "proxmox_vm_qemu" "proxmox-fedora-template" {
   clone = var.template_name[var.vm_name_input]
 
   # VM ID
-  vmid = "${count.index+300}"
+  vmid = "${count.index+var.vm_ID}"
 
   # define hardware
   bios              = "ovmf" # required for VM to boot

@@ -15,7 +15,7 @@ provider "aws" {
 }
 
 locals {
-  raw_data = file("cloudwatch/cloudwatch-agent-config.json")
+  raw_data = file("CloudWatch/cloudwatch-agent-config.json")
 }
 
 resource "aws_instance" "app_server" {

@@ -49,3 +49,9 @@ variable "vm_count" {
   type = string
   description = "Enter the number of VMs you wish to create"
 }
+
+}# VM ID
+variable "vm_ID" {
+  type = string
+  description = "Enter start of VM ID range"
+}
